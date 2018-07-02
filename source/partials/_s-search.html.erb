@@ -1,0 +1,93 @@
+<div id="Search" data-tab="Patient Search">
+  <div class="labels">
+    <a href="#" class="label active">Patient Search</a>
+  </div>
+
+  <div class="section-content">
+    <h1 style="margin-top: .5em;">Veteran Search</h1>
+    <h2>Section 1: Search by traits</h2>
+    <p>The criteria for a search by traits includes: First and Last Name, Social Security Number, and DOB. At least 3 fields are required.</p>
+    <form class="" action="index.html" method="post">
+      <div class="formRow">
+        <label>𝚂𝚂𝙽
+          <input type="text" maxlength="9" onchange="c('id',this.value)">
+        </label>
+        <label>First
+          <input type="text" onchange="c('firstName',this.value)">
+        </label>
+        <label>*Last
+          <input type="text" onchange="c('lastName',this.value)">
+        </label>
+        <label>Month
+          <input type="text" placeholder="MM" maxlength="2" onchange="c('dobM',this.value)">
+        </label>/
+        <label>Day
+          <input type="text" placeholder="DD" maxlength="2" onchange="c('dobD',this.value)">
+        </label>/
+        <label>Year
+          <input type="text" placeholder="YYYY" maxlength="4" onchange="c('dobY',this.value)">
+        </label>
+      </div>
+      <label style="margin: .6em 0 .8em;">
+        <input type="checkbox" style="display: inline;">
+        Show Additional Search Criteria
+      </label>
+      <div>
+        <input type="button" onclick="activate('searchResults')" value="Search">
+        <input type="button" onclick="activate('searchResults')" value="Reset">
+      </div>
+    </form>
+    <h2>Section 2: Search by EDIPI</h2>
+    <p>The search criteria for search by EDIPI includes the EDIPI</p>
+    <form class="" action="index.html" method="post">
+      <div class="formRow">
+        <label>*EDIPI
+          <input type="text" maxlength="9" onchange="c('id',this.value)">
+        </label>
+      </div>
+      <div>
+        <input type="button" onclick="activate('searchResults')" value="Search">
+        <input type="button" onclick="activate('searchResults')" value="Reset">
+      </div>
+    </form>
+
+    <div id="searchResults" class="hidden">
+      <h2>Section 3: Search results</h2>
+      <p>Your search in MVI found 1 matching record(s).</p>
+      <a href="javascript:load('Profile');">
+        <table>
+          <tr>
+            <th>
+            <th>Name
+            <th>Date of Birth
+            <th>Deceased Date
+            <th>Sex
+            <th>Address
+            <th>Phone No
+            <th>𝚂𝚂𝙽
+            <th>EDIPI
+            <th>Sens. Level
+            <th>Source
+            <th>Br. of Svc
+          <tr class="highlight">
+            <td><a class="collapse">-</a>
+            <td><span class="data-firstName">Gary</span> <span class="data-lastName">Reynolds</span>
+            <td><span class="data-dobM">01</span>/<span class="data-dobD">25</span>/<span class="data-dobY">1971</span>
+            <td>
+            <td>M
+            <td>762 Collins Creek Lane Palm Harbor FL 346844
+            <td>
+            <td><span class="data-id">384737284</span>
+            <td>
+            <td>Not Sensitive
+            <td>MVI
+            <td>
+        </table>
+      </a>
+      <ul>
+        <li class="highlight">991 - SLC4 TEST LAB (PREFERRED FACILITY: 991 VASLC4)</li>
+        <li>988 - DAYT20</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Unified Service Desk for Microsoft Dynamics 365</title>
+    <%= stylesheet_link_tag "style", :relative => true %>
+  </head>
+  <body>
+    <%= partial "partials/topNav" %>
+    <%= partial "partials/tabBar" %>
+    <div class="content">
+      <div class="sidebar sidebar-left" id="sidebarLeft">
+        <a href="javascript:activate('sidebarLeft');">
+          <%= partial(:'partials/carrot', :locals => { :d => "right" })%>
+        </a>
+        <div class="content" id="leftSidebar">
+
+        </div>
+      </div>
+      <div class="main-content" id="main">
+        <%= yield %>
+      </div>
+      <div class="sidebar sidebar-right" id="sidebarRight">
+        <a href="javascript:activate('sidebarRight');">
+          <%= partial(:'partials/carrot', :locals => { :d => "left" })%>
+        </a>
+        <div class="content" id="rightSidebar">
+          <%= partial "partials/notifications" %>
+        </div>
+      </div>
+    </div>
+    <div class="data">
+      <%= partial "partials/s-search" %>
+      <%= partial "partials/s-profile" %>
+      <%= partial "partials/s-case" %>
+      <%= partial "partials/s-index" %>
+      <%= partial "partials/s-mywork" %>
+    </div>
+    <%= javascript_include_tag "script", :relative => true %>
+  </body>
+</html>
